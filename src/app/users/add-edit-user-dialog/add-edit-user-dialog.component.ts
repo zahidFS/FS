@@ -3,6 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { SnackBarServiceService } from 'src/app/Core/snack-bar-service.service';
 import { UserServiceService } from '../user-service.service';
+import { minLengthValidator } from 'src/app/customValidation/minLengthValidator';
+import { capsOnlyUnderscoreValidator } from 'src/app/customValidation/capsOnlyUnderscoreValidator';
+
 
 @Component({
   selector: 'app-add-edit-user-dialog',
@@ -32,13 +35,13 @@ export class AddEditUserDialogComponent implements OnInit{
   public generateFormElements(){
     this.userForm=new FormGroup({
       id:new FormControl(this.data?.dataObj ? this.data.dataObj.id:null),
-      userName:new FormControl(this.data?.dataObj ? this.data.dataObj?.userName:null,[Validators.required]),
+      userName:new FormControl(this.data?.dataObj ? this.data.dataObj?.userName:null,[Validators.required,minLengthValidator(6)]),
       firstName:new FormControl(this.data?.dataObj ? this.data.dataObj?.firstName:null,Validators.required),
       lastName:new FormControl(this.data?.dataObj ? this.data.dataObj?.lastName:null),
-      email:new FormControl(this.data?.dataObj ? this.data.dataObj?.email:null),
-      phone:new FormControl(this.data?.dataObj ? this.data.dataObj?.phone:null),
-      domainName:new FormControl(this.data?.dataObj ? this.data.dataObj?.domainName:null),
-      countryCode:new FormControl(this.data?.dataObj ? this.data.dataObj?.countryCode:null),
+      email:new FormControl(this.data?.dataObj ? this.data.dataObj?.email:null,[Validators.required]),
+      phone:new FormControl(this.data?.dataObj ? this.data.dataObj?.phone:null,[Validators.required]),
+      domainName:new FormControl(this.data?.dataObj ? this.data.dataObj?.domainName:null,[Validators.required]),
+      countryCode:new FormControl(this.data?.dataObj ? this.data.dataObj?.countryCode:'91'),
       currencyCode:new FormControl(this.data?.dataObj ? this.data.dataObj?.currencyCode:null),
       locationType:new FormControl(this.data?.dataObj ? this.data.dataObj?.locationType:null),
       locationCode:new FormControl(this.data?.dataObj ? this.data.dataObj?.locationCode:null),

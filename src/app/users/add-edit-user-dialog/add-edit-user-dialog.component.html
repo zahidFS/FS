@@ -3,9 +3,16 @@
     <div class="px-1">
       <h1>{{this.data.Action}} Users</h1><hr>
   </div>
-    <div class="row g-1 no-gutter-row">
+    <div class="row mb-2">
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <div class="form-group">
+          <label>User Name</label>
+          <input type="text"  placeholder="Enter UserName" class="form-control" name="userName"
+          formControlName="userName" required/>
+        </div>
+        <div *ngIf="userForm.get('userName').hasError('minLength')" style="color:tomato;">Minimum length is 6 characters</div>
+        <!-- <div *ngIf="userForm.get('username').hasError('capsOnlyUnderscore')">Invalid username</div> -->
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>User Name</mat-label>
           <input
             matInput
@@ -15,11 +22,16 @@
             required
           />
           <mat-icon matSuffix>edit</mat-icon>
-        </mat-form-field>
+        </mat-form-field> -->
 
       </div>
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="Enter Email" class="form-control" name="email"
+          formControlName="email" required/>
+        </div>
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>Email</mat-label>
           <input
             matInput
@@ -29,13 +41,18 @@
             required
           />
           <mat-icon matSuffix>edit</mat-icon>
-        </mat-form-field>
+        </mat-form-field> -->
       </div>
     </div>
 
-    <div class="row g-1 no-gutter-row">
+    <div class="row mb-2">
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Enter First Name" class="form-control" name="firstName"
+          formControlName="firstName" required/>
+        </div>
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>First Name</mat-label>
           <input
             matInput
@@ -45,10 +62,15 @@
             required
           />
           <mat-icon matSuffix>edit</mat-icon>
-        </mat-form-field>
+        </mat-form-field> -->
       </div>
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Enter Last Name" class="form-control" name="lastName"
+          formControlName="lastName"/>
+        </div>
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>Last Name</mat-label>
           <input
             matInput
@@ -58,13 +80,18 @@
             required
           />
           <mat-icon matSuffix>edit</mat-icon>
-        </mat-form-field>
+        </mat-form-field> -->
       </div>
     </div>
 
-    <div class="row g-1 no-gutter-row">
+    <div class="row mb-2">
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <div class="form-group">
+          <label>Domain Name</label>
+          <input type="text" placeholder="Enter domainName" class="form-control" name="domainName"
+          formControlName="domainName" required/>
+        </div>
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>Domain Name</mat-label>
           <input
             matInput
@@ -74,10 +101,15 @@
             required
           />
           <mat-icon matSuffix>edit</mat-icon>
-        </mat-form-field>
+        </mat-form-field> -->
       </div>
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="text" placeholder="Enter phone" class="form-control" name="phone"
+          formControlName="phone"/>
+        </div>
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>Phone</mat-label>
           <input
             matInput
@@ -87,13 +119,13 @@
             required
           />
           <mat-icon matSuffix>edit</mat-icon>
-        </mat-form-field>
+        </mat-form-field> -->
       </div>
     </div>
 
-    <div class="row g-1 no-gutter-row">
+    <div class="row mb-2">
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>Select Country Code</mat-label>
           <mat-select 
           name="countryCode"
@@ -106,10 +138,18 @@
             <mat-option value="61">61</mat-option>
 
           </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
+        <label>Select Country Code</label>
+        <select class="form-control" name="countryCode" formControlName="countryCode"  placeholder="Select">
+          <option  disabled>--Select any --</option>
+          <option value="91" selected>+91</option>
+          <option value="93">+93</option>
+          <option value="54">+54</option>
+          <option value="61">+61</option>
+        </select>
       </div>
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>Select Role</mat-label>
           <mat-select 
           name="defaultRoleId"
@@ -121,13 +161,26 @@
             <mat-option value="R3">R3</mat-option>
             <mat-option value="R4">R4</mat-option>
           </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
+        <label>Select Role</label>
+        <select class="form-control" name="defaultRoleId" formControlName="defaultRoleId">
+          <option  disabled>--Select any --</option>
+          <option value="R1">R1</option>
+          <option value="R2">R2</option>
+          <option value="R3">R3</option>
+          <option value="R4">R4</option>
+        </select>
       </div>
     </div>
 
-    <div class="row g-1 no-gutter-row">
+    <div class="row mb-2">
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <div class="form-group">
+          <label>TimeZone</label>
+          <input type="text" placeholder="Enter timeZone" class="form-control" name="timeZone"
+          formControlName="timeZone"/>
+        </div>
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>Time-Zone</mat-label>
           <input
             matInput
@@ -137,10 +190,11 @@
             required
           />
           <mat-icon matSuffix>edit</mat-icon>
-        </mat-form-field>
+        </mat-form-field> -->
       </div>
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>Select Currency Code</mat-label>
           <mat-select 
           name="currencyCode"
@@ -152,13 +206,22 @@
             <mat-option value="option">AZN</mat-option>
             <mat-option value="option">BSD</mat-option>
           </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
+
+        <label>Select Currency Code</label>
+        <select class="form-control" name="currencyCode" formControlName="currencyCode">
+          <option  disabled>--Select any --</option>
+          <option value="option">AUD</option>
+          <option value="option">EUR</option>
+          <option value="option">AZN</option>
+          <option value="option">BSD</option>
+        </select>
       </div>
     </div>
 
-    <div class="row g-1 no-gutter-row">
+    <div class="row mb-2">
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>Select Manager</mat-label>
           <mat-select 
           name="currencyCode"
@@ -170,11 +233,19 @@
             <mat-option value="Manager3">Manager3</mat-option>
             <mat-option value="Manager4">Manager4</mat-option>
           </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
+        <label>Select Manager</label>
+        <select class="form-control" name="managerId" formControlName="managerId">
+          <option  disabled>--Select any --</option>
+          <option value="Manager1">Manager1</option>
+          <option value="Manager2">Manager2</option>
+          <option value="Manager3">Manager3</option>
+          <option value="Manager4">Manager4</option>
+        </select>
       </div>
 
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>Select Location Code</mat-label>
           <mat-select 
           name="locationCode"
@@ -186,14 +257,22 @@
             <mat-option value="LC3">LC3</mat-option>
             <mat-option value="LC4">LC4</mat-option>
           </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
+        <label>Select Location Code</label>
+        <select class="form-control" name="locationCode" formControlName="locationCode">
+          <option  disabled>--Select any --</option>
+          <option value="LC1">LC1</option>
+          <option value="LC2">LC2</option>
+          <option value="LC3">LC3</option>
+          <option value="LC4">LC4</option>
+        </select>
       </div>
  
     </div>
 
-    <div class="row g-1 no-gutter-row">
+    <div class="row mb-2">
       <div class="col-md-6">
-        <mat-form-field appearance="outline" id="txtFormElements">
+        <!-- <mat-form-field appearance="outline" id="txtFormElements">
           <mat-label>Select Location Type</mat-label>
           <mat-select 
           name="locationType"
@@ -205,11 +284,20 @@
             <mat-option value="Loc3">Loc3</mat-option>
             <mat-option value="Loc4">Loc4</mat-option>
           </mat-select>
-        </mat-form-field>
+        </mat-form-field> -->
+
+        <label>Select Location Type</label>
+        <select class="form-control" name="locationType" formControlName="locationType">
+          <option  disabled>--Select any --</option>
+          <option value="Loc1">Loc1</option>
+          <option value="Loc2">Loc2</option>
+          <option value="Loc3">Loc3</option>
+          <option value="Loc4">Loc4</option>
+        </select>
       </div>
 
       <div class="col-md-6">
-        <div style="margin-top:10px;">
+        <div style="margin-top:18px;">
           <mat-radio-group aria-label="Select an option" formControlName="isActive" >
             <mat-radio-button value="0">Active</mat-radio-button>
             <mat-radio-button value="1">InActive</mat-radio-button>

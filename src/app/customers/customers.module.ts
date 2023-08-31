@@ -27,6 +27,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { QueuesOnBoardComponent } from './queues-on-board/queues-on-board.component';
 import { FormsOnboardComponent } from './forms-onboard/forms-onboard.component';
 import { LibraryOnboardComponent } from './library-onboard/library-onboard.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { FilterdropdownPipe } from './pipes/filterdropdown.pipe';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { LibraryOnboardComponent } from './library-onboard/library-onboard.compo
     FilterPipePipe,
     QueuesOnBoardComponent,
     FormsOnboardComponent,
-    LibraryOnboardComponent
+    LibraryOnboardComponent,
+    FilterdropdownPipe
   ],
   imports: [
     CommonModule,
@@ -50,7 +53,7 @@ import { LibraryOnboardComponent } from './library-onboard/library-onboard.compo
     MatSelectModule,MatIconModule,MatButtonModule,
     MatDialogModule,MatRadioModule,MatStepperModule,
     MatPaginatorModule, MatTableModule,MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,MatAutocompleteModule,
   ]
 })
 export class CustomersModule { }

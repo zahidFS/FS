@@ -18,6 +18,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { LayoutModule } from '../layout/layout.module';
 import { NgxSliderModule } from 'ngx-slider-v2';
 
@@ -33,7 +34,7 @@ import { NgxSliderModule } from 'ngx-slider-v2';
     FieldLibraryRoutingModule,
     LayoutModule,NgxSliderModule,
     FormsModule,ReactiveFormsModule,
-    MatInputModule,MatFormFieldModule,
+    MatInputModule,MatFormFieldModule,MatAutocompleteModule,
     MatSelectModule,MatIconModule,MatButtonModule,
     MatDialogModule,MatRadioModule,MatCheckboxModule,
     MatPaginatorModule, MatTableModule,MatSliderModule

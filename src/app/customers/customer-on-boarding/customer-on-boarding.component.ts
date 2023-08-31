@@ -54,7 +54,9 @@ private _pageService:PageTypeServiceService,
     this.getPageTypes();
   }
 
-
+/**
+ * To get List of Projects 
+*/
   private getProjects(){
     this._projectService.getProjects().subscribe((res:[])=>{
       console.log(res);
@@ -62,6 +64,9 @@ private _pageService:PageTypeServiceService,
     })
   }
 
+/**
+ * To get List of Customers 
+*/
   private getCustomers(){
     this._customerService.getCustomers().subscribe((res:[])=>{
       console.log(res);
@@ -70,6 +75,9 @@ private _pageService:PageTypeServiceService,
     })
   }
 
+/**
+ * To get List of Users 
+*/
   private getUsers(){
     this._userService.getUsers().subscribe((res:[])=>{
       console.log("Users",res);
@@ -78,6 +86,9 @@ private _pageService:PageTypeServiceService,
     })
   }
 
+/**
+ * To get List of Reasons 
+*/
   private getReasons(){
     this._reasonService.getReject().subscribe((res:[])=>{
       console.log("reasons",res);
@@ -86,6 +97,9 @@ private _pageService:PageTypeServiceService,
     })
   }
 
+/**
+ * To get List of PageTpes/Form 
+*/
   private getPageTypes(){
     this._pageService.getPageType().subscribe((res:[])=>{
       console.log(res);
@@ -94,9 +108,9 @@ private _pageService:PageTypeServiceService,
     })
   }
 
-  /**
-   * To hanfle logic of assing data for User/Reason 
-   */
+/**
+ * To hanfle logic of assing data for User/Reason/Forms 
+*/
   public onTabClicked(event:any){
     if (event.selectedIndex !== undefined) {
       console.log(`Step clicked: ${event.selectedIndex}`);
@@ -125,17 +139,17 @@ private _pageService:PageTypeServiceService,
   
 
 
-  /**
-   * getting data as Per Selection in the grid from child for User/Reason 
-   */
+/**
+* getting data as Per Selection in the grid from child for User/Reason 
+*/
   onSelectedItemsChanged(selectedItems: any[]) {
     console.log('Selected items: Parent', selectedItems);
     this._customerService.selectedForms.next(selectedItems)
   }
 
 
- /**
-     * To Select Group User in dropdown or Not 
+/**
+  * To Select Group User in dropdown or Not 
 */
   onSearchTypeSelected(searchType: string) {
     this.selectedSearchType = searchType;

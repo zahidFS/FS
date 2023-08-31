@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LayoutModule } from './layout/layout.module';
 import { TruncatePipe } from './custom-pipes/truncate.pipe';
+import { CommonValidationDirective } from './directivesCustom/common-validation.directive';
 
 
 
@@ -14,6 +15,7 @@ import { TruncatePipe } from './custom-pipes/truncate.pipe';
   declarations: [
     AppComponent,
     TruncatePipe,
+    CommonValidationDirective,
   ],
   imports: [
     BrowserModule,
