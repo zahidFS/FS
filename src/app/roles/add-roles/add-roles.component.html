@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="rolesForm">
+                <div class="card border border-0">
+                        <div class="p-2">
+                            <h1>{{actionMessage}} Roles</h1><hr>
+                        </div>
+                    <div class="card-body">
+                        <div class="row mb-1">
+                            <div class="col-md-8">
+                                    <mat-form-field appearance="outline" id="txtFormElements">
+                                      <mat-label>Role Name</mat-label>
+                                      <input matInput placeholder="ex Supervisor Role" name="roleName" formControlName="roleName" required>
+                                      <mat-icon matSuffix>edit</mat-icon>
+                                      <mat-error *ngIf="rolesForm.get('roleName').invalid && (rolesForm.get('roleName').touched || rolesForm.get('roleName').dirty)">
+                                        This field is required.
+                                      </mat-error>
+                                    </mat-form-field>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-check form-check-inline mt-3">
+                                    <input class="form-check-input" type="radio" name="isActive" id="inlineRadio1" value="Yes">
+                                    <label class="form-check-label" for="isActive">Active</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="isActive" id="inlineRadio2" value="No" >
+                                    <label class="form-check-label" for="isActive">InActive</label>
+                                  </div>
+                            </div>
+                        </div>
+                            <mat-form-field appearance="outline" id="textAreaFormElements" >
+                              <mat-label>Role Description</mat-label>
+                              <textarea matInput name="description" formControlName="description" placeholder="ex.This role will be allow add/edit/del ... " required></textarea>
+                              <mat-icon matSuffix>edit</mat-icon>
+                              <mat-error *ngIf="rolesForm.get('description').invalid && (rolesForm.get('description').touched || rolesForm.get('description').dirty)" class="mb-5">
+                                This field is required.
+                              </mat-error>
+                            </mat-form-field>
+                    </div>
+                    <hr>
+                    <div class="Action"> 
+                        <button mat-raised-button id="warnColor" (click)="closeDialog()" class="float-end p-3">
+                            <mat-icon>cancel</mat-icon>
+                            Cancel
+                        </button>
+                        <button mat-raised-button id="primaryColor" [disabled]="!rolesForm.valid" (click)="addUpdateRole()" class="float-end p-3">
+                            <mat-icon>add_circle</mat-icon>
+                            Save and Continue
+                        </button>
+                   </div> 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

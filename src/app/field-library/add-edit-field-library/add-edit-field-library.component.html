@@ -1,0 +1,198 @@
+<div class="container-fluid mt-3">
+    <form [formGroup]="fieldForm">
+      <div class="px-1">
+        <h1>{{this.data.Action}} Fields</h1>
+        
+        <hr>
+        <!-- 'fieldLabel','fieldName','placeholder','allowedChar','notAllowedChar','dataType' -->
+    </div>
+      <div class="row g-1 no-gutter-row">
+        <div class="col-md-6 ">
+          <mat-form-field appearance="outline" id="txtFormElements">
+            <mat-label>Field Label</mat-label>
+            <input
+              matInput
+              placeholder="Enter Field Label"
+              name="fieldLabel"
+              formControlName="fieldLabel"
+              required
+            />
+            <mat-icon matSuffix>edit</mat-icon>
+          </mat-form-field>
+        </div>
+         <div class="col-md-6 ">
+            <mat-form-field appearance="outline" id="txtFormElements">
+                <mat-label>Field Name</mat-label>
+                <input
+                matInput
+                placeholder="Enter Field Name"
+                name="fieldName"
+                formControlName="fieldName"
+                required
+                />
+                <mat-icon matSuffix>edit</mat-icon>
+            </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row g-1 no-gutter-row">
+            <div class="col-md-6" style="font-size:1px;">
+              <mat-form-field appearance="fill" id="txtFormElements"  >
+                <mat-label>Placeholder</mat-label>
+                <input
+                  matInput
+                  placeholder="Enter Placeholder"
+                  name="placeholder"
+                  formControlName="placeholder"
+                  required
+                />
+                <mat-icon matSuffix>edit</mat-icon>
+              </mat-form-field>
+            </div>
+             <div class="col-md-6">
+                <mat-form-field appearance="outline" id="txtFormElements">
+                    <mat-label>Allowed Char</mat-label>
+                    <input
+                    matInput
+                    placeholder="Enter Allowed Characters"
+                    name="allowedChar"
+                    formControlName="allowedChar"
+                    required
+                    />
+                    <mat-icon matSuffix>edit</mat-icon>
+                </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row g-1 no-gutter-row">
+                <div class="col-md-6">
+                  <mat-form-field appearance="outline" id="txtFormElements">
+                    <mat-label>Select Control Type</mat-label>
+                    <mat-select 
+                    placeholder="Select Control Type"
+                    name="controlType"
+                    formControlName="controlType"
+                    required
+                    >
+                      <mat-option value="Textbox">Textbox</mat-option>
+                      <mat-option value="Checkbox">Checkbox</mat-option>
+                      <mat-option value="Textarea">Textarea</mat-option>
+                      <mat-option value="Password">Password</mat-option>
+                      <mat-option value="Email">Email</mat-option>
+                      <mat-option value="Date">Date</mat-option>
+                      <mat-option value="Time">Time</mat-option>
+                      <mat-option value="Radio">Radio</mat-option>
+                      <mat-option value="DropDown">DropDown</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                </div>
+                 <div class="col-md-6">
+                    <mat-form-field appearance="outline" id="txtFormElements">
+                        <mat-label>Select Data Type</mat-label>
+                        <mat-select 
+                        placeholder="Select Data Type"
+                        name="dataType"
+                        formControlName="dataType"
+                        required
+                        >
+                          <mat-option value="Text">Text</mat-option>
+                          <mat-option value="Number">Number</mat-option>
+                          <mat-option value="Varchar">Varchar</mat-option>
+                          <mat-option value="Boolean">Boolean</mat-option>
+                          <mat-option value="Integer">Integer</mat-option>
+                          <mat-option value="Datetime">Datetime</mat-option>
+                          <mat-option value="Float">Float</mat-option>
+                          <mat-option value="String">String</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row g-1 no-gutter-row">
+                  <div class="col-md-6">
+                    <mat-form-field appearance="outline" id="txtFormElements">
+                      <mat-label>Valid Regx</mat-label>
+                      <input
+                        matInput
+                        placeholder="Enter validRegx"
+                        name="notAllowedChar"
+                        formControlName="validRegx"
+                        required
+                      />
+                  </mat-form-field>
+                  </div>
+                   <div class="col-md-6">
+                    <mat-form-field appearance="outline" id="txtFormElements">
+                      <mat-label>Not Allowed Characters</mat-label>
+                      <input
+                        matInput
+                        placeholder="Enter notAllowedChar"
+                        name="notAllowedChar"
+                        formControlName="notAllowedChar"
+                        required
+                      />
+                      <mat-icon matSuffix>edit</mat-icon>
+                    </mat-form-field>
+                    </div>
+                  </div>
+
+                <div class="row mb-3 mt-2">
+                    <div class="col-md-6">
+                      <div class="slider-label">Min length</div>
+                      <ngx-slider [(value)]="valueMinLen" [options]="optionsMinLen"></ngx-slider>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="slider-label">Max length</div>
+                      <ngx-slider [(value)]="valueMaxLen" [options]="optionsMaxLen"></ngx-slider>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                      <div class="custom-slider">
+                        <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" style="background-color:red;"></ngx-slider>
+                      </div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <mat-checkbox formControlName="showLabel"></mat-checkbox>
+                        <small class="chkbx me-1">Show Label</small> 
+                      </div>
+                    
+                      <div class="d-flex align-items-center">
+                        <mat-checkbox formControlName="required"></mat-checkbox>
+                        <span class="chkbx me-3">Required</span>
+                      </div>
+                    
+                      <div class="d-flex align-items-center">
+                        <mat-checkbox formControlName="readOnly"></mat-checkbox>
+                        <small class="chkbx me-3">Readonly</small>
+                      </div>
+                    
+                      <div class="d-flex align-items-center">
+                        <mat-checkbox formControlName="multiSelect"></mat-checkbox>
+                        <small class="chkbx me-3">MultiSelect</small>
+                      </div>
+                    </div> 
+                </div>
+
+                <div class="row g-1 no-gutter-row">
+                    <div class="col-md-12">
+                      
+                    </div>
+                </div>
+ 
+  <hr>
+      <div class="Action"> 
+        <button mat-raised-button id="warnColor" (click)="closeDialog()" class="float-end p-3">
+          <mat-icon>cancel</mat-icon>
+          Cancel
+      </button>
+        <button mat-raised-button id="primaryColor" [disabled]="!fieldForm.valid" (click)="addUpdateField()" class="float-end p-3">
+            <mat-icon>add</mat-icon>
+            Save and Continue
+        </button>  
+   </div>
+    </form>
+  </div>
+  

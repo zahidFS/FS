@@ -1,0 +1,39 @@
+.mat-mdc-form-field {
+    margin-top: 16px;
+  }
+  .card-header{
+    background: #002855;
+    color:white;
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+}
+#roles-heading {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-button {
+  border: none;
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 20px;
+  padding: 2px 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  outline: none;
+  margin-left:15px;
+}
+
+.toggle-button.active {
+  background-color:#FF7F32;
+  color: #fff;
+}
+
+.button-label {
+  margin-right: 5px;
+}
+
+

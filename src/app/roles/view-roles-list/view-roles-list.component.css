@@ -1,0 +1,46 @@
+.mat-icon{
+    margin-right:10px;
+}
+.card-header{
+    background: #002855;
+    color:white;
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.button-container button {
+    margin-right: 10px;
+}
+td{
+    color:#1D4F91;
+}
+
+/* ToolTip */
+.tooltip-content {
+    max-width: 200px;
+    word-wrap: break-word;
+  }
+
+  /* Align text adn icon */
+  .description-container {
+    display: flex;
+    align-items: center; 
+    height:35px;
+
+  }
+  
+  .tooltip-content {
+    max-width: 200px;
+    word-wrap: break-word;
+  }
+
+  #roles-heading {
+    display: flex;
+    align-items: center;
+  }
+  
+
+

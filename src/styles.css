@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+
+}
+
+#txtFormElements{
+    width:100%;
+    line-height:5px;
+  }
+  #textAreaFormElements{
+    width:100%
+  }
+#primaryColor{
+    background-color:#1D4F91;
+    color:white;
+    margin-top:10px ;
+    margin-right: 5px;
+}
+
+#warnColor{
+    background-color:#FF7F32;
+    color:white;
+    margin-top:10px ;
+    margin-right: 5px;
+}
+
+.ng-invalid.ng-touched{
+    border-color: red;
+}
+
+#custom-table{
+    /* border-bottom: 2px solid #FF7F32 !important;  */
+    border-bottom: 1px solid #1D4F91;
+  }
+  .no-gutter-row {
+    margin-bottom: -19px;
+}
+
+
+
+

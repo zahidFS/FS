@@ -1,0 +1,97 @@
+<div class="container mt-2">
+    <div class="card shadow">
+        <div class="card-header position-relative" style="height:60px;">
+            <h2 class="mt-1" id="roles-heading">
+                <mat-icon mat-list-icon>group</mat-icon>
+                &nbsp;Users
+            </h2>
+            <div class="button-container mt-1 me-2 position-absolute top-0 end-0">
+                <button mat-raised-button id="primaryColor" (click)="userAction('Add',null)" class="">
+                    <mat-icon>add_circle</mat-icon>
+                    Add New
+                </button>
+                <button mat-raised-button id="warnColor" class="">
+                    <mat-icon>do_not_disturb_on</mat-icon>
+                    Delete
+                </button>  
+            </div>
+        </div>
+        <div class="card-body ">
+            <div class="mat">
+                <table mat-table [dataSource]="dataSource" >
+                <!-- Id Column -->
+                <!-- <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef> Id. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container> -->
+            
+                <!-- Name Role -->
+                <ng-container matColumnDef="userName">
+                    <th mat-header-cell *matHeaderCellDef style="width: 15%;"> User Name </th>
+                    <td mat-cell *matCellDef="let element" style="width: 15%;"> {{element.userName}} </td>
+                </ng-container>
+            
+                <!-- Description Column -->
+                <ng-container matColumnDef="firstName" >
+                    <th mat-header-cell *matHeaderCellDef style="width:10%;"> First Name </th>
+                    <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.firstName}}</td>
+                </ng-container>
+
+                 <!-- Description Column -->
+                 <ng-container matColumnDef="lastName">
+                    <th mat-header-cell *matHeaderCellDef style="width:10%;"> Last Name </th>
+                    <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.lastName}}</td>
+                </ng-container>
+            
+                 <!-- Created Column -->
+                 <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef style="width:15%;"> Email </th>
+                    <td mat-cell *matCellDef="let element" style="width:15%;"> {{element.email}} </td>
+                </ng-container>
+
+                 <!-- Created Column -->
+                 <ng-container matColumnDef="phone" >
+                    <th mat-header-cell *matHeaderCellDef style="width:10%;"> Phone </th>
+                    <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.phone}} </td>
+                </ng-container>
+
+                <!-- Created Column -->
+                <ng-container matColumnDef="manager">
+                    <th mat-header-cell *matHeaderCellDef style="width:10%;"> Manager </th>
+                    <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.manager}} </td>
+                </ng-container>
+
+                 <!-- Created Column -->
+                 <ng-container matColumnDef="countryCode" >
+                    <th mat-header-cell *matHeaderCellDef style="width:8%;"> Country Code </th>
+                    <td mat-cell *matCellDef="let element" style="width:8%;"> {{element.countryCode}} </td>
+                </ng-container>
+
+                <!-- locationCode Column -->
+                <ng-container matColumnDef="locationCode" >
+                    <th mat-header-cell *matHeaderCellDef style="width:8%;"> location Code </th>
+                    <td mat-cell *matCellDef="let element" style="width:8%;"> {{element.locationCode}} </td>
+                </ng-container>
+               
+
+                <ng-container matColumnDef="Action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element" style="width:15%;">
+                        <mat-icon style="color:#1D4F91;" (click)="userAction('Edit',element)">edit</mat-icon>
+                        <mat-icon style="color:#FF7F32;" (click)="deleteUser(element.id)">delete</mat-icon>
+                    </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns" style="height:35px;"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" style="height:35px;"></tr>
+                </table>
+            
+                <mat-paginator [pageSizeOptions]="[10, 20, 30]"
+                            showFirstLastButtons
+                            aria-label="Select page of periodic elements">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+    
+</div>
